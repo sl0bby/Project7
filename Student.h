@@ -7,4 +7,4 @@ public:
 	int age;
 	double mark;
 	bool alive;
-}
+};

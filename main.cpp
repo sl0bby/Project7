@@ -19,4 +19,4 @@ int main() {
 	cout << "Best students name is " << t.name << endl;
 	
 	return 0;
-}
+} 
