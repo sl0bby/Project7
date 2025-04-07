@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "Teacher.h"
 
 
 void change(Student student) {
@@ -9,23 +9,43 @@ void change(Student student) {
 }
 
 int main() {
-	Student* st1 = nullptr;
-	st1 = new Student;
+	Student* list = nullptr;
+	int size;
 
-	st1->name = "Vlad";
-	st1->age = 15;
-	st1->mark = 9.9;
-	st1->alive = true;
+	cout << "Input nubmer of students: ";
+	cin >> size;
 
-	Student* st2 = st1;
+	list = new Student[size];
 
-	cout << "Before: " << endl;
-	cout << st1->getString() << endl;
+	cout << "Input data of students: ";
+	for (int i = 0; i < size; i++)
+	{
 
-	st2->name = "Matvey";
+		cout << ""
+		cout << "name: ";
+		cin >> list[i].name;
 
-	cout << "After: " << endl;
-	cout << st1->getString() << endl;
+		cout << "age: ";
+		cin >> list[i].age;
+
+		cout << "average mark: ";
+		cin >> list[i].mark;
+
+		cout << "alive: ";
+		cin >> list[i].alive;
+		char answer;
+		cin >> answer;
+
+		list[i].alive = islower(answer) == 'y';
+	}
+
+	Teacher teacher;
+
+	Student result = teacher.getAllBestStudents(list, size);
+
+	string msg = result.alive ? "Best student is " + result.name : "No best students";
+
+	cout << msg;
 
 	return 0;
 } 
