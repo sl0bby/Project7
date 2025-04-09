@@ -1,5 +1,4 @@
 #include "Student.h"
-using namespace std;
 
 class Teacher {
 private:
@@ -9,8 +8,8 @@ private:
 		return 0;
 	}
 
-public: 
-	Student getAllBestStudents(Student* students, int size, int* count) {
+public:
+	Student* getAllBestStudents(Student* students, int size, int* count) {
 		*count = countBestStudents(students, size);
 
 		Student* list_of_best = new Student[*count];
@@ -18,11 +17,12 @@ public:
 
 		for (int i = 0; i < size; i++)
 		{
-			if (students[i].mark >= BEST_MARK){
+			if (students[i].mark >= BEST_MARK) {
 				list_of_best[j++] = students[i];
 			}
 		}
 
 		return list_of_best;
 	}
+
 };
